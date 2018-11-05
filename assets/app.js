@@ -3,6 +3,7 @@ var cities = ["Seattle", "New York", "Los Angles", "Milwaukee"];
 
 //re render html to display 
 function getCity() {
+    $("#gifDiv").empty();
     var city = $(this).attr("data-name");
     console.log("this is city" + city);
 
@@ -26,7 +27,11 @@ function getCity() {
 
           var cityImage = $("<img>");
           cityImage.attr("src", results[i].images.fixed_height.url);
-
+          cityImage.attr('data-still', results[i].images.fixed_height_still.url);
+          cityImage.attr('data-animate', results[i].images.fixed_height.url);
+          cityImage.attr('data-state', results[i].images.fixed_height_still.url);  
+          cityImage.addClass("gif",results[i].images.fixed_height_still.url)
+         
           gifDiv.prepend(p);
           gifDiv.prepend(cityImage);
 
@@ -79,8 +84,15 @@ function renderButtons() {
   // // We're adding the event listener to the document itself because it will
   // // work for dynamically generated elements
   // // $(".movies").on("click") will only add listeners to elements that are on the page at that time
- $(Document).on("click", ".city", getCity);
-  
+ $(document).on("click", ".city", getCity);
+ 
+ $(".gif").on("click", function() {
+    var still =$(this).attr("data-state");
+    if (still ==="still")
+    { var animatedGif = $(this).attr("data-animate");
+    $(this).attr("src", animatedGif);
+ }
+});
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
