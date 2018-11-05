@@ -3,7 +3,7 @@ var cities = ["Seattle", "New York", "Los Angles", "Milwaukee"];
 
 //re render html to display 
 function getCity() {
-    $("#gifDiv").empty();
+    $("#gifPlace").empty();
     var city = $(this).attr("data-name");
     console.log("this is city" + city);
 
@@ -30,7 +30,7 @@ function getCity() {
           cityImage.attr('data-still', results[i].images.fixed_height_still.url);
           cityImage.attr('data-animate', results[i].images.fixed_height.url);
           cityImage.attr('data-state', results[i].images.fixed_height_still.url);  
-          cityImage.addClass("gif",results[i].images.fixed_height_still.url)
+          cityImage.addClass(".gif",results[i].images.fixed_height_still.url)
          
           gifDiv.prepend(p);
           gifDiv.prepend(cityImage);
@@ -86,7 +86,8 @@ function renderButtons() {
   // // $(".movies").on("click") will only add listeners to elements that are on the page at that time
  $(document).on("click", ".city", getCity);
  
- $(".gif").on("click", function() {
+
+ $("gifDiv").on("click", function() {
     var still =$(this).attr("data-state");
     if (still ==="still")
     { var animatedGif = $(this).attr("data-animate");
