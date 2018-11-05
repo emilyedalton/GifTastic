@@ -1,7 +1,6 @@
 // Initial array of cities
 var cities = ["Seattle", "New York", "Los Angles", "Milwaukee"];
-
-//re render html to display 
+//re render html to display. Function empties out gifPlace div, gets the name from the button and queries the url with that name/term 
 function getCity() {
     $("#gifPlace").empty();
     var city = $(this).attr("data-name");
@@ -15,7 +14,6 @@ function getCity() {
       url: queryURL,
       method: "GET"
     }) .then(function(response) {
-        
         var results = response.data;
 //iterating through each of the gifs returned from the API and creating a DIV for them
         for (var i = 0; i < results.length; i++) {
@@ -26,14 +24,19 @@ function getCity() {
           var p = $("<p>").text("Rating: " + rating);
 
           var cityImage = $("<img>");
-          cityImage.attr("src", results[i].images.fixed_height.url);
+          cityImage.attr("src", results[i].images.fixed_height_still.url);
           cityImage.attr('data-still', results[i].images.fixed_height_still.url);
           cityImage.attr('data-animate', results[i].images.fixed_height.url);
-          cityImage.attr('data-state', results[i].images.fixed_height_still.url);  
-          cityImage.addClass(".gif",results[i].images.fixed_height_still.url)
+          cityImage.attr('data-state', "still",results[i].images.fixed_height_still.url);  
+          cityImage.addClass("gif",results[i].images.fixed_height_still.url)
          
           gifDiv.prepend(p);
           gifDiv.prepend(cityImage);
+
+          
+        
+
+
 
           $("#gifPlace").prepend(gifDiv);
         }
@@ -78,22 +81,41 @@ function renderButtons() {
    // Calling renderButtons which handles the processing of our movie array
   renderButtons();
    });
+
+  // function animate(){
+
+  //     var state = $(this).attr("data-state");
+  //     if (state === "still") {
+  //       $(this).attr("src", $(this).attr("data-animate"));
+  //       $(this).attr("data-state", "animate");
+  //     } else {
+  //       $(this).attr("src", $(this).attr("data-still"));
+  //       $(this).attr("data-state", "still");
+  //     }
+     
+  //   }
   
   // // Function for displaying the movie info
   // // We're adding a click event listener to all elements with the class "movie"
   // // We're adding the event listener to the document itself because it will
   // // work for dynamically generated elements
   // // $(".movies").on("click") will only add listeners to elements that are on the page at that time
- $(document).on("click", ".city", getCity);
+$(document).on("click", ".city", getCity);
  
+$(document).on("click", ".gif", function animate(){
 
- $("gifDiv").on("click", function() {
-    var still =$(this).attr("data-state");
-    if (still ==="still")
-    { var animatedGif = $(this).attr("data-animate");
-    $(this).attr("src", animatedGif);
- }
+  var state = $(this).attr("data-state");
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+ 
 });
+
+ 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
