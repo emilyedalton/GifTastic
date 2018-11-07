@@ -17,7 +17,7 @@ function getCity() {
         var results = response.data;
 //iterating through each of the gifs returned from the API and creating a DIV for them
         for (var i = 0; i < results.length; i++) {
-          var gifDiv = $("<div>");
+          var gifDiv = $("<div>").addClass("gifStyle");
 //storing the rating
           var rating = results[i].rating;
 
