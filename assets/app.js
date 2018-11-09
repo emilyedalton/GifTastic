@@ -51,7 +51,7 @@ function renderButtons() {
     // (this is necessary otherwise we will have repeat buttons)
     $("#buttons-view").empty();
   
-    // Looping through the array of movies
+    // Looping through the array of cities
     for (var i = 0; i < cities.length; i++) {
   
       // Then dynamicaly generating buttons for each city in the array
@@ -70,6 +70,7 @@ function renderButtons() {
   
   // // This function handles events where one button is clicked
   $("#add-city").on("click", function(event) {
+    
     event.preventDefault();
   
   //   // This line grabs the input from the textbox
@@ -77,30 +78,16 @@ function renderButtons() {
   
   //   // The city from the textbox is then added to our array
     cities.push(city);
-  
+    // $("#city-input").reset();
+
    // Calling renderButtons which handles the processing of our movie array
+   
+
   renderButtons();
    });
 
-  // function animate(){
+ $(document).on("click", ".city", getCity);
 
-  //     var state = $(this).attr("data-state");
-  //     if (state === "still") {
-  //       $(this).attr("src", $(this).attr("data-animate"));
-  //       $(this).attr("data-state", "animate");
-  //     } else {
-  //       $(this).attr("src", $(this).attr("data-still"));
-  //       $(this).attr("data-state", "still");
-  //     }
-     
-  //   }
-  
-  // // Function for displaying the movie info
-  // // We're adding a click event listener to all elements with the class "movie"
-  // // We're adding the event listener to the document itself because it will
-  // // work for dynamically generated elements
-  // // $(".movies").on("click") will only add listeners to elements that are on the page at that time
-$(document).on("click", ".city", getCity);
  
 $(document).on("click", ".gif", function animate(){
 

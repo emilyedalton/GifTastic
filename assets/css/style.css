@@ -1,4 +1,10 @@
-.container{
+body{background-color:#262526;
+    font-family: 'Quicksand', sans-serif;
+    color:white;
+}
+p, form{font-family: 'Quicksand', sans-serif;
+    color:white;}
+.container{ 
     
 }
 
@@ -12,8 +18,8 @@ button{
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
     font-weight:300;
+    font-family: 'Quicksand', sans-serif;
     color: black;
     text-align:center;
 
@@ -29,6 +35,19 @@ button{
   margin: 40px 30px;
    
 }
+#buttons-view{
+    display: flex;
+    flex-direction: row;
+}
+    #form-container{
+        display: flex;
+        flex-direction: row;
+        border: 3px solid green;
+        justify-content: flex-end; 
+
+
+    } 
+
  #gifStyle9 {
     justify-self: start;
 border: 2px solid green;}
