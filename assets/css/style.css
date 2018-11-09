@@ -1,11 +1,9 @@
 .container{
-    Display:flex;
-    flex-direction: column;
+    
 }
-.innerContainer { 
-    Display: flex; 
-    flex-direction: column;
-}
+
+   
+
 button{
     display:inline-block;
     padding:0.35em 1.2em;
@@ -21,6 +19,55 @@ button{
 
 }
 #gifPlace{
-    border: 2px solid red;
-   display: flex;
+    border: 2px red solid;
+    display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-gap: 10px;
+  font-family: 'Lato';
+  text-align: center;
+  font-size: 1.4em;
+  margin: 40px 30px;
+   
 }
+ /* #gifStyle9 {
+    grid-area: a;
+border: 2px solid green;}
+
+#gifStyle8 {
+    grid-area: b;
+border: 2px solid purple;}
+
+#gifStyle8 {
+    grid-area: c;
+border: 2px solid orange;}
+
+#gifStyle7 {
+    grid-area: d;
+border: 2px solid blue;}
+
+#gifStyle6 {
+    grid-area: e;
+border: 2px solid green;}
+
+#gifStyle5 {
+    grid-area: f;
+border: 2px solid purple;}
+
+#gifStyle4 {
+    grid-area: g;
+border: 2px solid orange;}
+
+#gifStyle3 {
+    grid-area: h;
+border: 2px solid blue;}
+#gifStyle2 {
+    grid-area: i;
+border: 2px solid green;}
+
+#gifStyle1 {
+    grid-area: b;
+border: 2px solid purple;}
+
+#gifStyle {
+    grid-area: c;
+border: 2px solid orange;} */

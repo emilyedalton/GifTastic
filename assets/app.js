@@ -17,7 +17,7 @@ function getCity() {
         var results = response.data;
 //iterating through each of the gifs returned from the API and creating a DIV for them
         for (var i = 0; i < results.length; i++) {
-          var gifDiv = $("<div>").addClass("gifStyle");
+          var gifDiv = $("<div>").attr("id", "gifStyle"+i);
 //storing the rating
           var rating = results[i].rating;
 
@@ -75,7 +75,7 @@ function renderButtons() {
   //   // This line grabs the input from the textbox
     var city = $("#city-input").val().trim();
   
-  //   // The movie from the textbox is then added to our array
+  //   // The city from the textbox is then added to our array
     cities.push(city);
   
    // Calling renderButtons which handles the processing of our movie array
@@ -118,4 +118,3 @@ $(document).on("click", ".gif", function animate(){
  
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
-
