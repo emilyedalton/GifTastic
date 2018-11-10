@@ -7,7 +7,9 @@ body{background-color:#262526;
 p, form{font-family: 'Quicksand', sans-serif;
     color:white;}
 
-   
+h1{
+font-size: 3em;
+margin-bottom: 1em;}
 
 button{
     display:inline-block;
@@ -23,7 +25,17 @@ button{
     text-align:center;
 
 }
+
+.gifStyle {
+    justify-self: start;
+}
+.container{ 
+    max-width: 73%;
+    margin-left: 2em;
+
+}
 #gifPlace{
+margin: auto;
   display: grid;
   grid-template-columns: 400px 400px 400px;
   grid-gap: 10px;
@@ -31,21 +43,19 @@ button{
   text-align: center;
   font-size: 1.4em;
   margin: 40px 30px;
+
    
 }
 #buttons-view{
     display: flex;
     flex-direction: row;
 }
-    #form-container{
+#form-container{
         display: flex;
         flex-direction: row;
          justify-content: flex-end; 
 
 
-    } 
 
- .gifStyle {
-    justify-self: start;
-}
+    } 
 
