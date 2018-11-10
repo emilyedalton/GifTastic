@@ -1,5 +1,5 @@
 // Initial array of cities
-var cities = ["Seattle", "New York", "Los Angles", "Milwaukee"];
+var cities = ["Seattle", "New York", "Detroit","Los Angles", "Milwaukee"];
 //re render html to display. Function empties out gifPlace div, gets the name from the button and queries the url with that name/term 
 function getCity() {
     $("#gifPlace").empty();
@@ -17,7 +17,9 @@ function getCity() {
         var results = response.data;
 //iterating through each of the gifs returned from the API and creating a DIV for them
         for (var i = 0; i < results.length; i++) {
-          var gifDiv = $("<div>").attr("id", "gifStyle"+i);
+          // var gifDiv = $("<div>").attr("id", "gifStyle"+i);
+          var gifDiv = $("<div>").addClass("gifStyle");
+
 //storing the rating
           var rating = results[i].rating;
 

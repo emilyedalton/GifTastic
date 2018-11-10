@@ -1,12 +1,11 @@
+
+
 body{background-color:#262526;
     font-family: 'Quicksand', sans-serif;
     color:white;
 }
 p, form{font-family: 'Quicksand', sans-serif;
     color:white;}
-.container{ 
-    
-}
 
    
 
@@ -25,7 +24,6 @@ button{
 
 }
 #gifPlace{
-  border: 2px red solid;
   display: grid;
   grid-template-columns: 400px 400px 400px;
   grid-gap: 10px;
@@ -42,51 +40,12 @@ button{
     #form-container{
         display: flex;
         flex-direction: row;
-        border: 3px solid green;
-        justify-content: flex-end; 
+         justify-content: flex-end; 
 
 
     } 
 
- #gifStyle9 {
+ .gifStyle {
     justify-self: start;
-border: 2px solid green;}
+}
 
-#gifStyle8 {
-    justify-self: start;
-border: 2px solid purple;}
-
-#gifStyle8 {
-    justify-self: start;
-border: 2px solid orange;}
-
-#gifStyle7 {
-    justify-self: start;
-border: 2px solid blue;}
-
-#gifStyle6 {
-    justify-self: start;
-border: 2px solid green;}
-
-#gifStyle5 {
-    justify-self: start;
-border: 2px solid purple;}
-
-#gifStyle4 {
-    justify-self: start;
-border: 2px solid orange;}
-
-#gifStyle3 {
-    justify-self: start;
-    border: 2px solid blue;}
-#gifStyle2 {
-    justify-self: start;
-border: 2px solid green;}
-
-#gifStyle1 {
-    justify-self: start;
-border: 2px solid purple;}
-
-#gifStyle0 {
-    justify-self: start;
-border: 2px solid orange;} */
