@@ -7,4 +7,4 @@ City Search uses the giphy API to make a dynamic web page that populates with gi
 * JQuery
 * CSS Flexbox
 * CSS Grid
-
+* [Giphy API (follow link for documentation)](https://developers.giphy.com/docs/)
